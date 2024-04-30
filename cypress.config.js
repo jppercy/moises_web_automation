@@ -7,6 +7,8 @@ module.exports = {
     chromeWebSecurity: false,
     requestTimeout: 10000,
 
+    retries: 2,
+
     setupNodeEvents(on, config) {
       // implement node event listeners here
 
