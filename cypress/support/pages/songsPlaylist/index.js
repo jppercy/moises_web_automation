@@ -1,6 +1,5 @@
 const songElems = require('./songPageElements').SP_ELEMENTS;
 const songFile = require('./songFilesParams').SF_PARAMS;
-const urls = require('../sites/urls').URLS;
 
 
 class handleSongs {
