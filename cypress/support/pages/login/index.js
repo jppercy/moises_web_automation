@@ -1,5 +1,4 @@
 const elems = require('./elements').ELEMENTS;
-const urls = require('../sites/urls').URLS;
 
 
 const loginCredentialFilePath = './cypress/support/loginCredentials.json'
@@ -85,7 +84,7 @@ class login{
     }
 
     logoutApplication() {
-        cy.visit(urls.moises_home_page) 
+        cy.visit(Cypress.env('moisesHomePage')) 
         cy.get(elems.userInfoSignOutButton).should('be.visible').click()
         cy.get(elems.signOutButton).click()
         cy.get(elems.username).should('be.visible').should('be.enabled')
