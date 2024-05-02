@@ -1,9 +1,6 @@
 # moises_web_automation
 QA Code Challenge
 
-# moises_web_automation
-QA Code Challenge
-
 Overview of the Project
 
 In order to learn a new language and follow the company strategies, I used cypress to automate the Moises Website. Tried to use the knowledge from other frameworks and applied here. It was nice to learn even more about JavaScript since I have used Python for a long time.

@@ -32,8 +32,15 @@ context('handle songs in setlist', () => {
   })
 
   // it('fail on deleting song when user is not the owner', () => {
-  //   handleSongs.tryDeleteSongFromPlaylistNotOwner()  // flaky test, since we need to know the rules to the Modal appears
+  //   handleSongs.tryDeleteSongFromPlaylistNotOwner()  // flaky test, since we need to know the rules to Modal appears
   // })
+
+  describe('logout moises application', () => {
+    // thinking about isolation between suites, we'll logout and make a new login in the next test scenario
+    it('logout moises app', () => {
+      login.logoutApplication()
+    })
+  })
 
 })
 
