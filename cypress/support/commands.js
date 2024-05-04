@@ -23,3 +23,21 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+
+const loginCredentialFilePath = './cypress/support/loginCredentials.json'
+
+// creating a unique login so any spec can use it
+Cypress.Commands.add('createRandomUserEmail', (email) => {
+    const getDateNow = Date.now().toString()
+    const getUniqueID = Cypress._.uniqueId()
+
+    const login = {
+        email: Date.now().toString() + getUniqueID + '@qatest.com',
+        password: 'fakepassword'
+     }
+
+    cy.writeFile(loginCredentialFilePath, login)
+
+})
+

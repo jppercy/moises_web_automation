@@ -1,33 +1,38 @@
 
-import login from '../support/pages/login'
+import login from '../support/pages/login/loginHandler'
 
 describe('validate accesses into moises login page', () => {
+  indexedDB.deleteDatabase('firebaseLocalStorageDb')
 
   it('create random email to use during the tests', () => {
-    login.createRandomUserEmail()
+    cy.createRandomUserEmail()
   })
 
   beforeEach(() => {
-    login.accessLoginPage()
+    cy.accessLoginPage()
   })
 
   it('wrong login credentials are filled up', () => {
-    login.wrongCredentialsMessage()
+    cy.wrongCredentialsMessage()
   })
 
   it('wrong email error message - no domain', () => {
-    login.wrongEmailError()
+    cy.wrongEmailError()
   })
 
   it('create a new account into moises', () => {
-    login.signupIntoMoises()
+    cy.accessMoisesMainPage()
+    cy.signupIntoMoises()
   })
-
 })
 
-describe('logout moises application', () => {
-  // thinking about isolation between suites, we'll logout and make a new login in the next test scenario
+describe('validate accesses into moises login page', () => {
   it('logout moises app', () => {
-    login.logoutApplication()
+    indexedDB.deleteDatabase('firebaseLocalStorageDb')
+
+    cy.createRandomUserEmail()
+    cy.accessMoisesMainPage()
+    cy.signupIntoMoises()
+    cy.logoutApplication()
   })
 })
